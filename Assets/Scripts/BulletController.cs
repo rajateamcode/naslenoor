@@ -6,11 +6,21 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float speed = 10f;
+    public Vector3 direction;
+    
+    
+    void Start()
+    {
+    	//TargetPosition = transform.position;
+    	direction.Normalize();
+    }
     
     void Update()
     {
         // Move the bullet upward
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        //this.transform.position = Vector3.MoveTowards(this.transform.position , TargetPosition, speed * Time.deltaTime);
+        transform.Translate(direction  * speed * Time.deltaTime);
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,5 +39,11 @@ public class BulletController : MonoBehaviour
             Destroy(gameObject); // Destroy the bullet
             RocketController.instance.score--;
         }
+    }
+    
+    
+    public void SetTargetPosition(Vector3 target)
+    {
+    	direction = target.normalized;
     }
 }

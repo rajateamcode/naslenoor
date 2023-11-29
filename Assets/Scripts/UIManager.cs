@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     }
     public void Play()
     {
-        
+        SceneManager.LoadScene("levelSelection");
     }
 
     public void Shop()
