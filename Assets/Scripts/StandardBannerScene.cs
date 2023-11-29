@@ -50,6 +50,7 @@ public class StandardBannerScene : MonoBehaviour
 
     public void Hide()
     {
+    	
         TapsellPlus.HideStandardBannerAd();
     }
 

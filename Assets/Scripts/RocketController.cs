@@ -60,14 +60,18 @@ public class RocketController : MonoBehaviour
 
         }
         
-        InvokeRepeating( "SpawnBullet" , 0f , 0.5f);
+        StartCoroutine("SpawnBullet");
         
     }
 
-void SpawnBullet()
+IEnumerator SpawnBullet()
     {
+	while(true){
+		Vector3 spawnPos = transform.position + new Vector3(0f , 2f , 0f);
 
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+		GameObject bullet = Instantiate(bulletPrefab,  spawnPos, Quaternion.identity);
+        yield return new WaitForSeconds(0.8f);
+	}
 
     }
 
