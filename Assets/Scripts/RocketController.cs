@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class RocketController : MonoBehaviour
 {
     public float speed = 5f;
@@ -28,6 +29,7 @@ public class RocketController : MonoBehaviour
     void Start()
     {
         score = 0;
+        StandardBannerScene.instance.Show();
     }
 
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class RocketController : MonoBehaviour
             roundTime -= Time.deltaTime;
             if(roundTime <= 0 )
             {
+            	GameOver();
                 roundTime = 0f;
                 endingRound = true;
             }
@@ -80,6 +83,19 @@ void SpawnBullet(Vector2 spawnPosition)
         Debug.Log("detected");
   
     }
+    
+    
+    void GameOver()
+    {
+    	StandardBannerScene.instance.Request();
+    }
+    
+    
+    public void GoToMainMenue()
+	{
+		StandardBannerScene.instance.Hide();
+		SceneManager.LoadScene("first");
+	}
 }
     
 
