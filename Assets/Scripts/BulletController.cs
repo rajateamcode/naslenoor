@@ -32,6 +32,8 @@ public class BulletController : MonoBehaviour
             Destroy(other.gameObject); // Destroy the enemy
             Destroy(gameObject); // Destroy the bullet
             RocketController.instance.score++;
+            if(PlayerPrefs.GetInt("highScore") < RocketController.instance.score) 
+            	PlayerPrefs.SetInt("highScore" , RocketController.instance.score);
         }
         if (other.CompareTag("Freind"))
         {

@@ -10,8 +10,10 @@ public class RocketController : MonoBehaviour
     public GameObject bulletPrefab;
     public int score;
     public TMP_Text timetext;
+    public TMP_Text Scoretext;
     public float roundTime = 20f;
     bool endingRound = false;
+    public GameObject endlevel;
 
 
     public static RocketController instance;
@@ -41,6 +43,7 @@ public class RocketController : MonoBehaviour
             }
         }
         timetext.text = roundTime.ToString("0.0") + " s";
+        Scoretext.text =  score.ToString();
         float horizontalInput = Input.GetAxis("Horizontal");
         Debug.Log(score);
         
@@ -71,20 +74,6 @@ void SpawnBullet(Vector2 spawnPosition)
         	bulletcontroller.SetTargetPosition(worldPosition - transform.position);
     }
 
-    public void RightMovement()
-    {
-        if (transform.position.x < 1.73)
-            transform.position += Vector3.right * speed * Time.deltaTime;
-       // SpawnBullet();
-    }
-
-
-    public void LeftMovement()
-    {
-        if (transform.position.x > -1.73)
-            transform.position += Vector3.left * speed * Time.deltaTime;
-      //  SpawnBullet();
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
