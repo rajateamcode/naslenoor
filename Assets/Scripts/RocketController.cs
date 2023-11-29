@@ -12,6 +12,11 @@ public class RocketController : MonoBehaviour
     public TMP_Text timetext;
     public float roundTime = 20f;
     bool endingRound = false;
+    
+    
+    public Vector3 mouseWorldPosition;
+    
+
 
 
     public static RocketController instance;
@@ -41,8 +46,19 @@ public class RocketController : MonoBehaviour
             }
         }
         timetext.text = roundTime.ToString("0.0") + " s";
-        float horizontalInput = Input.GetAxis("Horizontal");
+
         Debug.Log(score);
+        
+            mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPosition.z = 0;
+            //mouseWorldPosition.y = 0;
+            var direction = (mouseWorldPosition - transform.position).normalized;
+           
+            
+        if(Input.GetMouseButtonDown(0))
+        	SpawnBullet();
+
+
         
     }
 
@@ -52,26 +68,11 @@ public class RocketController : MonoBehaviour
         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
     }
 
-    public void RightMovement()
-    {
-        if (transform.position.x < 1.73)
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        SpawnBullet();
-    }
 
 
-    public void LeftMovement()
-    {
-        if (transform.position.x > -1.73)
-            transform.position += Vector3.left * speed * Time.deltaTime;
-        SpawnBullet();
-    }
+    
+    
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("detected");
-  
-    }
 }
     
 
