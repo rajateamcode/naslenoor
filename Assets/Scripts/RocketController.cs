@@ -60,7 +60,7 @@ public class RocketController : MonoBehaviour
 
         }
         
-        InvokeRepeating( "SpawnBullet" , 0f , 0.1f);
+        InvokeRepeating( "SpawnBullet" , 0f , 0.5f);
         
     }
 

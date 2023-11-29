@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] enemyPrefab;
     public Transform spawnpoint;
 
-    public float spwaninterval = 2f;
+    public float spwaninterval = 5f;
     // Start is called before the first frame update
     void Start()
     {
