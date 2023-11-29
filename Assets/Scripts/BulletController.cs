@@ -19,7 +19,8 @@ public class BulletController : MonoBehaviour
     {
         // Move the bullet upward
         //this.transform.position = Vector3.MoveTowards(this.transform.position , TargetPosition, speed * Time.deltaTime);
-        transform.Translate(direction  * speed * Time.deltaTime);
+       // transform.Translate(direction  * speed * Time.deltaTime);
+       transform.Translate(Vector3.up * speed * Time.deltaTime);
 
     }
 

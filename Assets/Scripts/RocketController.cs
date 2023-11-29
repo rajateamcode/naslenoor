@@ -50,31 +50,25 @@ public class RocketController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         Debug.Log(score);
         
-        
-        if (Input.touchCount > 0)
+        //    ********************* move by finger *******************
+        if (Input.touchCount > 0 || Input.GetMouseButton(0))
         {
-            Touch touch = Input.GetTouch(0); // Assume the first touch
-            if (touch.phase == TouchPhase.Began)
-            {
-                SpawnBullet(touch.position);
-            }
+        	Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        	targetPosition.z = 0;
+        	
+        	transform.position = Vector3.MoveTowards(transform.position , targetPosition , 5 * Time.deltaTime);
+
         }
+        
+        InvokeRepeating( "SpawnBullet" , 0f , 0.1f);
         
     }
 
-void SpawnBullet(Vector2 spawnPosition)
+void SpawnBullet()
     {
-        // Convert the touch position to world space
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(spawnPosition.x, spawnPosition.y, 10f));
 
-        // Instantiate a bullet at the touched position
-        GameObject bullet = Instantiate(bulletPrefab, worldPosition, Quaternion.identity);
-        // Optionally, you can add code to set the bullet direction based on the touch position
-        
-        BulletController bulletcontroller = bullet.GetComponent<BulletController>();
-        
-        if(bulletcontroller != null)
-        	bulletcontroller.SetTargetPosition(worldPosition - transform.position);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
     }
 
 
