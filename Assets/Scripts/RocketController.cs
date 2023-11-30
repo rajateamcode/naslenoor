@@ -67,7 +67,7 @@ public class RocketController : MonoBehaviour
 IEnumerator SpawnBullet()
     {
 	while(true){
-		Vector3 spawnPos = transform.position + new Vector3(0f , 2f , 0f);
+		Vector3 spawnPos = transform.position + new Vector3(0f , 1.5f , 0f);
 
 		GameObject bullet = Instantiate(bulletPrefab,  spawnPos, Quaternion.identity);
         yield return new WaitForSeconds(0.8f);
