@@ -13,6 +13,7 @@ public class FirstScene : MonoBehaviour
             error => Debug.Log(error.ToString()));
         TapsellPlus.SetGdprConsent(true);
         TapsellPlus.SetDebugMode(3);
+        DontDestroyOnLoad(this.gameObject);
     }
 
 

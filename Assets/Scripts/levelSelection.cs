@@ -10,7 +10,7 @@ public class levelSelection : MonoBehaviour
     public void level1()
     {
         SceneManager.LoadScene("Level1");
-        StandardBannerScene.instance.Request();
+        //StandardBannerScene.instance.Request();
     }
 
 }
