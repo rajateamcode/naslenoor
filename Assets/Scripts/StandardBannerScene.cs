@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class StandardBannerScene : MonoBehaviour
 {
-    private const string ZoneID = "651e80de28b2543b3cadc03c";
+    private const string ZoneID = "65683b6f4bbb960aae458f92";
     private static string _responseId;
     
     public static StandardBannerScene instance;

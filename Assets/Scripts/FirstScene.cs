@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class FirstScene : MonoBehaviour
 {
-    private const string TapsellPlusKey = "pcpfgieflgeltaifpfreikajhlsdhabocghnfejqerhqhitppepgmlfghnohfokteqmcti";
+    private const string TapsellPlusKey = "hqqefbdqjkodbahtjprgqpdjainoohmppkqomjaseamlonkdggankqdgotgpionsctpsna";
 
     private void Start()
     {

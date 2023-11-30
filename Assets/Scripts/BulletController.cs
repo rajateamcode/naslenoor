@@ -38,6 +38,9 @@ public class BulletController : MonoBehaviour
         }
         if (other.CompareTag("Freind"))
         {
+        	if(PlayerPrefs.GetInt("Vibrate") == 1)
+        		Handheld.Vibrate();
+        	
             Destroy(other.gameObject); // Destroy the enemy
             Destroy(gameObject); // Destroy the bullet
             RocketController.instance.score--;
