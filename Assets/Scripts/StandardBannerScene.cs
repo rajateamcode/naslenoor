@@ -22,7 +22,7 @@ public class StandardBannerScene : MonoBehaviour
 
     public void Request()
     {
-     
+    	Debug.Log("request sent");
         TapsellPlus.RequestStandardBannerAd(ZoneID, BannerType.Banner320X50,
             tapsellPlusAdModel =>
             {
@@ -39,6 +39,7 @@ public class StandardBannerScene : MonoBehaviour
 
     public void Show()
     {
+    	Debug.Log("request sent");
         TapsellPlus.ShowStandardBannerAd(_responseId, Gravity.Bottom, Gravity.Center,
             tapsellPlusAdModel => {
     
