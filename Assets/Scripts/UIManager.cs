@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     {
         settingCanvas.SetActive(false);
         aboutUsCanvas.SetActive(false);
-        StandardBannerScene.instance.Request();
+      
     }
     public void Play()
     {

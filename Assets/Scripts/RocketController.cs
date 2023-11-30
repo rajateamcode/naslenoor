@@ -31,6 +31,7 @@ public class RocketController : MonoBehaviour
     {
         score = 0;
         StandardBannerScene.instance.Show();
+        StartCoroutine("SpawnBullet");
     }
 
     // Update is called once per frame
@@ -61,7 +62,7 @@ public class RocketController : MonoBehaviour
 
         }
         
-        StartCoroutine("SpawnBullet");
+        
         
     }
 
@@ -71,7 +72,7 @@ IEnumerator SpawnBullet()
 		Vector3 spawnPos = transform.position + new Vector3(0f , 1.5f , 0f);
 
 		GameObject bullet = Instantiate(bulletPrefab,  spawnPos, Quaternion.identity);
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.2f);
 	}
 
     }

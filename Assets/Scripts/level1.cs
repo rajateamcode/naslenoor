@@ -15,6 +15,7 @@ public class level1 : MonoBehaviour
     {
         Time.timeScale = 1f;
         gameOverPanel.SetActive(false);
+        StandardBannerScene.instance.Show();
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class level1 : MonoBehaviour
         gameOverPanel.SetActive(true);
     	//Rocket.SetActive(false);
     	timeText.SetActive(false);
+    	StandardBannerScene.instance.Request();
         
     }
     

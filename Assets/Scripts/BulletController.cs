@@ -17,9 +17,7 @@ public class BulletController : MonoBehaviour
     
     void Update()
     {
-        // Move the bullet upward
-        //this.transform.position = Vector3.MoveTowards(this.transform.position , TargetPosition, speed * Time.deltaTime);
-       // transform.Translate(direction  * speed * Time.deltaTime);
+
        transform.Translate(Vector3.up * speed * Time.deltaTime);
 
     }
@@ -38,7 +36,7 @@ public class BulletController : MonoBehaviour
         }
         if (other.CompareTag("Freind"))
         {
-        	if(PlayerPrefs.GetInt("Vibrate") == 1)
+        	if(PlayerPrefs.GetInt("Vibrate" , 1) == 1)
         		Handheld.Vibrate();
         	
             Destroy(other.gameObject); // Destroy the enemy
