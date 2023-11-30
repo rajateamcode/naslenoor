@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject[] enemyPrefab;
-    public Transform spawnpoint;
+    public Transform[] spawnpoint;
 
     public float spwaninterval = 5f;
     // Start is called before the first frame update
@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     void SpanRandomEnemy()
     {
         int randomIndex = Random.Range(0, enemyPrefab.Length);
-        Instantiate(enemyPrefab[randomIndex] , spawnpoint.position , Quaternion.identity);
+        int randomIndexPos = Random.Range(0, spawnpoint.Length);
+        Instantiate(enemyPrefab[randomIndex] , spawnpoint[randomIndexPos].position , Quaternion.identity);
     }
 }

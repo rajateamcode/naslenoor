@@ -58,5 +58,8 @@ public class ShopManager : MonoBehaviour
 	{
 		SceneManager.LoadScene("first");
 	}
-	
+    public void select()
+    {
+		SceneManager.LoadScene("levelSelection");
+	}
 }
