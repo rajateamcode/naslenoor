@@ -13,4 +13,9 @@ public class levelSelection : MonoBehaviour
         //StandardBannerScene.instance.Request();
     }
 
+    public void home()
+    {
+        SceneManager.LoadScene("first");
+    }
+
 }
