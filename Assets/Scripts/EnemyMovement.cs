@@ -17,6 +17,11 @@ public class EnemyMovement : MonoBehaviour
     	//rb.velocity = new Vector2(2f , 0);
     	
     		rb.velocity = new Vector2(0, -2f);
+    		
+    		if(transform.position.y < -1f){
+    			RocketController.instance.score--;
+    			Destroy(gameObject); 
+    		}
     
     }
 }

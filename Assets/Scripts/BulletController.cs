@@ -7,7 +7,8 @@ public class BulletController : MonoBehaviour
 {
     public float speed = 0.05f;
     public Vector3 direction;
-    
+    public ParticleSystem deathoarticle;
+    public AudioClip attack;
     
     void Start()
     {
@@ -28,6 +29,8 @@ public class BulletController : MonoBehaviour
         // Check if the bullet collided with an enemy
         if (other.CompareTag("Enemy"))
         {
+        	
+        	Instantiate(deathoarticle , other.gameObject.transform.position , Quaternion.identity);
             Destroy(other.gameObject); // Destroy the enemy
             Destroy(gameObject); // Destroy the bullet
             RocketController.instance.score++;
