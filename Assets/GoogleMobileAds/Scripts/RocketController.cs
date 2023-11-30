@@ -30,7 +30,7 @@ public class RocketController : MonoBehaviour
     void Start()
     {
         score = 0;
-        StandardBannerScene.instance.Show();
+        
         StartCoroutine("SpawnBullet");
     }
 
@@ -87,13 +87,13 @@ IEnumerator SpawnBullet()
     
     void GameOver()
     {
-    	StandardBannerScene.instance.Request();
+    	//StandardBannerScene.instance.Request();
     }
     
     
     public void GoToMainMenue()
 	{
-		StandardBannerScene.instance.Hide();
+		//StandardBannerScene.instance.Hide();
 		SceneManager.LoadScene("first");
 	}
 }
