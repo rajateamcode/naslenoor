@@ -25,6 +25,7 @@ public class RocketController : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+        StandardBannerScene.instance.Request();
     }
     void Start()
     {
