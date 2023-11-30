@@ -34,20 +34,22 @@ public class level1 : MonoBehaviour
     
     void GameOver()
     {
-        Time.timeScale = 0f;
+        
         gameOverPanel.SetActive(true);
     	//Rocket.SetActive(false);
     	timeText.SetActive(false);
     	StandardBannerScene.instance.Request();
+    	Time.timeScale = 0f;
         
     }
     
     void Win()
     {
-        Time.timeScale = 0f;
+        
         winPanel.SetActive(true);
     	//Rocket.SetActive(false);
     	timeText.SetActive(false);
+    	Time.timeScale = 0f;
     }
     
     public void playAgain()
