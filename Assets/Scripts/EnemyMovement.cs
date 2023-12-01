@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
 	Rigidbody2D rb;
 	public float speed;
+	public ParticleSystem explossion;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +26,10 @@ public class EnemyMovement : MonoBehaviour
     			
     			if(PlayerPrefs.GetInt("Vibrate" , 1) == 1)
         			Handheld.Vibrate();
+    			Instantiate(explossion , transform.position , Quaternion.identity);
     			
     			RocketController.instance.score--;
-    			Destroy(gameObject , 1f); 
+    			Destroy(gameObject); 
     		}
     
     }

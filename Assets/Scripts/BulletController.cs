@@ -29,8 +29,8 @@ public class BulletController : MonoBehaviour
         // Check if the bullet collided with an enemy
         if (other.CompareTag("Enemy"))
         {
-        	if(PlayerPrefs.GetInt("sounds", 1) == 1)
-        		this.gameObject.GetComponent<AudioSource>().Play();
+//        	if(PlayerPrefs.GetInt("sounds", 1) == 1)
+//        		this.gameObject.GetComponent<AudioSource>().Play();
         	
         	Instantiate(deathoarticle , other.gameObject.transform.position , Quaternion.identity);
             Destroy(other.gameObject); // Destroy the enemy

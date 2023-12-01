@@ -73,7 +73,7 @@ IEnumerator SpawnBullet()
 		Vector3 spawnPos = transform.position + new Vector3(0f , 1.5f , 0f);
 
 		GameObject bullet = Instantiate(bulletPrefab,  spawnPos, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
 	}
 
     }

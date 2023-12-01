@@ -11,6 +11,11 @@ public class level1 : MonoBehaviour
 	//public GameObject Rocket;
 	public GameObject timeText;
     // Start is called before the first frame update
+    void Awake()
+    {
+    	StandardBannerScene.instance.Request();
+    }
+    
     void Start()
     {
         Time.timeScale = 1f;
@@ -49,6 +54,7 @@ public class level1 : MonoBehaviour
         winPanel.SetActive(true);
     	//Rocket.SetActive(false);
     	timeText.SetActive(false);
+    	StandardBannerScene.instance.Request();
     	Time.timeScale = 0f;
     }
     
