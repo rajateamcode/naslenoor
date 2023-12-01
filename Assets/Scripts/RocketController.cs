@@ -15,7 +15,7 @@ public class RocketController : MonoBehaviour
     public float roundTime = 20f;
     bool endingRound = false;
     public GameObject endlevel;
-    
+    public float rocketSpeed;
 
 
     public static RocketController instance;
@@ -59,7 +59,7 @@ public class RocketController : MonoBehaviour
         	Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         	targetPosition.z = 0;
         	
-        	transform.position = Vector3.MoveTowards(transform.position , targetPosition , 5 * Time.deltaTime);
+        	transform.position = Vector3.MoveTowards(transform.position , targetPosition , rocketSpeed * Time.deltaTime);
 
         }
         

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2023040063695174796}
   - component: {fileID: -1912593996477525020}
   - component: {fileID: 7880327492760574065}
-  - component: {fileID: -8217299851102868214}
+  - component: {fileID: 2577166779223011388}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: enemy 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c45803c18a179264b982d088bfc4eb52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 797525e70ba74344ea6f827b33216506, type: 3}
   m_Color: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,7 +139,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5.31}
+    oldSize: {x: 5, y: 5.54}
     newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -274,7 +274,7 @@ PolygonCollider2D:
       - {x: -0.82, y: -2.235}
       - {x: -0.58, y: -1.925}
       - {x: -0.45, y: -1.735}
---- !u!82 &-8217299851102868214
+--- !u!82 &2577166779223011388
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

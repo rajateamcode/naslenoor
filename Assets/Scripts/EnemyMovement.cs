@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 	Rigidbody2D rb;
+	public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,21 @@ public class EnemyMovement : MonoBehaviour
     {
     	//rb.velocity = new Vector2(2f , 0);
     	
-    		rb.velocity = new Vector2(0, -2f);
+    		rb.velocity = new Vector2(0, -2f) * speed;
     		
     		if(transform.position.y < -1f){
+    			if(PlayerPrefs.GetInt("sounds", 1) == 1)
+    				this.gameObject.GetComponent<AudioSource>().Play();
+    			
+    			if(PlayerPrefs.GetInt("Vibrate" , 1) == 1)
+        			Handheld.Vibrate();
+    			
     			RocketController.instance.score--;
-    			Destroy(gameObject); 
+    			Destroy(gameObject , 1f); 
     		}
     
     }
+    
+ 
+ 
 }
