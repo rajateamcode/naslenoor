@@ -12,6 +12,13 @@ public class levelSelection : MonoBehaviour
         SceneManager.LoadScene("Level1");
         //StandardBannerScene.instance.Request();
     }
+    
+    public void level2()
+    {
+        SceneManager.LoadScene("Level2");
+        //StandardBannerScene.instance.Request();
+    }
+    
 
     public void home()
     {

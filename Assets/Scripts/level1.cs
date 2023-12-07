@@ -60,7 +60,7 @@ public class level1 : MonoBehaviour
     
     public void playAgain()
     {
-    	SceneManager.LoadScene("level1");
+    	SceneManager.LoadScene("Level1");
     }
     
 
@@ -72,6 +72,6 @@ public class level1 : MonoBehaviour
     
     public void NextLevel()
     {
-    	SceneManager.LoadScene("level2");
+    	SceneManager.LoadScene("Level2");
     }
 }
